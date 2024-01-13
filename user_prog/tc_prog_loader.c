@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     char kern_file_name[512];
     char sec_name[512];
     bool egress = false;
-
+    int verbose = 0;
     /* Depend on sharing pinned maps */
     if (bpf_fs_check_and_fix()) {
         fprintf(stderr, "ERR: "
