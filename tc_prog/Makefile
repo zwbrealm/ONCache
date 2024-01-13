@@ -14,7 +14,6 @@ $(BPF_OBJ): %.o: %.c  Makefile $(EXTRA_DEPS) $(OBJECT_LIBBPF)
 	    -Wno-unused-value \
 	    -Wno-pointer-sign \
 	    -Wno-compare-distinct-pointer-types \
-	    -Werror \
 	    -O2 -emit-llvm -c -g -o ${@:.o=.ll} $<
 	$(LLC) -march=bpf -filetype=obj -o $@ ${@:.o=.ll}
 
